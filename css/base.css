@@ -1,0 +1,22 @@
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--body-font);
+  height: 100%;
+  width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--heading);
+  font-family: var(--heading-font);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  line-height: 1.3;
+}

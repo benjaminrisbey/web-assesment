@@ -1,0 +1,87 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--heading);
+  padding: 1em;
+  border-bottom: 1px solid var(--background-secondary);
+  position: fixed;
+  background-color: var(--background);
+  width: 100%;
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+
+h1 a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+nav {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.header-icons {
+  display: flex;
+  gap: 1em;
+  margin-right: 1em;
+}
+
+.header-icons span {
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5em;
+  gap: 0.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--background-secondary);
+}
+
+nav a:hover {
+  color: var(--heading);
+  text-decoration-color: var(--heading);
+}
+
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  font-size: 3em;
+  cursor: pointer;
+  color: var(--heading);
+  border 1px solid var(--heading);
+  padding: 10px;
+}
+
+nav a:last-child {
+  text-decoration: none;
+}
+

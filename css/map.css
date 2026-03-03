@@ -1,0 +1,19 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--background-secondary);
+  padding: 1em;
+  font-size: 0.7em;
+}
+
+h2 {
+  text-align: center;
+  padding: 0.5em;
+}
