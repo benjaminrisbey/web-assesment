@@ -19,6 +19,7 @@
   <script src="js/nav.js" defer></script>
   <script src="js/vent.js" defer></script>
   <script src="js/form.js" defer></script>
+  <script src="js/search.js" defer></script>
   <script src="https://kit.fontawesome.com/83971882ba.js" crossorigin="anonymous"></script>
   
 
@@ -40,7 +41,6 @@
       </nav>
     </div>
     <div class="header-icons">
-      <span onclick="openSearch()"><i class="fa-solid fa-magnifying-glass"></i></span>
       <span onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
     </div>
 

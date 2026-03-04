@@ -23,6 +23,8 @@ require_once 'includes/header.php';
   <p>Explore our database of hydrothermal vents from the Western Pacific region.</p>
 </div>
 
+<input type="text" id="search-input" placeholder="Search vents by name or location..." class="search-input" auto-focus>
+
 <?php if (empty($vents)) : ?>
   <p>No vents found in the database.</p>
 <?php else : ?>
