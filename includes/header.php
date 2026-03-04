@@ -15,9 +15,12 @@
   <link rel="stylesheet" href="css/map.css">
   <link rel="stylesheet" href="css/contact.css">
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/vent.css">
   <script src="js/nav.js" defer></script>
+  <script src="js/vent.js" defer></script>
   <script src="js/form.js" defer></script>
   <script src="https://kit.fontawesome.com/83971882ba.js" crossorigin="anonymous"></script>
+  
 
   <!-- Students: Add your CSS stylesheet link here -->
 </head>

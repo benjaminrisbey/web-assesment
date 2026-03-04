@@ -11,7 +11,6 @@
   width: 80%;
   background: var(--background-card);
   border: 1px solid var(--background-secondary);
-  border-radius: 5px;
   padding: 2em;
   margin: 0.5em auto
 }
@@ -24,11 +23,4 @@
   margin: 0.5em 0;
 }
 
-.vent-card button {
-  background: var(--accent);
-  color: var(--heading);
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  cursor: pointer;
-}
+

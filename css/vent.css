@@ -1,0 +1,43 @@
+.vent-details-container {
+  display: flex;
+  flex-direction: column;
+  margin: 2em auto;
+  max-width: 800px;
+  width: 80%;
+  gap: 2em;
+}
+.vent-details {
+  background: var(--background-card);
+  border: 2px solid var(--background-secondary);
+  padding: 2em;
+}
+
+.vent-details h3 {
+  margin: 0.5em 0 0 0;
+}
+
+
+
+.vent-btn {
+  max-width: 140px;
+  padding: 0.5em;
+}
+
+
+.fauna-card {
+  background: var(--background-card);
+  border: 2px solid var(--background-secondary);
+  padding: 2em;
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fauna-card img {
+  width: 200px;
+  height: auto;
+}
+
+#fauna-details h3 {
+  margin: 0.5em 0 0 0;
+}

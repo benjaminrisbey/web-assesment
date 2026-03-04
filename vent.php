@@ -22,6 +22,10 @@ $stmt = $pdo->prepare('SELECT id, name, location, type, depth_metres, discovery_
 $stmt->execute([$ventId]);
 $vent = $stmt->fetch();
 
+$stmt = $pdo->prepare('SELECT id, name, scientific_name, description, image_url FROM fauna WHERE vent_id = ?');
+$stmt->execute([$ventId]);
+$fauna = $stmt->fetchAll();
+
 // If vent not found, redirect to home
 if (!$vent) {
     header('Location: index.php');
@@ -33,22 +37,42 @@ $pageTitle = $vent['name'];
 require_once 'includes/header.php';
 ?>
 
-<p><a href="index.php">&larr; Back to all vents</a></p>
 
 <h2><?php echo e($vent['name']); ?></h2>
+<div class="vent-details-container">
+  <button class="vent-btn" onclick="window.location.href='index.php'"><i class="fa-solid fa-arrow-left"></i> Back to Vents</button>
+  <div class="vent-details">
+    <h3>Location</h3>
+    <p><?php echo e($vent['location']); ?></p>
+    <h3>Type</h3>
+    <p><?php echo e($vent['type']); ?></p>
+    <h3>Depth</h3>
+    <p><?php echo e($vent['depth_metres']); ?> metres</p>
+    <h3>Discovery Year</h3>
+    <p><?php echo e($vent['discovery_year']); ?></p>
+  </div>
 
-<dl>
-    <dt>Location</dt>
-    <dd><?php echo e($vent['location']); ?></dd>
+  <?php if (empty($fauna)) : ?>
+    <p>No fauna found for this vent.</p>
+  <?php else : ?>
+  <button id="toggle-fauna-btn" class="vent-btn" >Show Fauna</button>
+  <?php endif; ?>
 
-    <dt>Type</dt>
-    <dd><?php echo e($vent['type']); ?></dd>
 
-    <dt>Depth</dt>
-    <dd><?php echo e($vent['depth_metres']); ?> metres</dd>
-
-    <dt>Discovery Year</dt>
-    <dd><?php echo e($vent['discovery_year']); ?></dd>
-</dl>
+  <div id="fauna-details" class="hidden">
+    <?php foreach ($fauna as $animal) : ?>
+    <div class="fauna-card">
+      <h3>Name</h3>
+      <p><?php echo e($animal['name']); ?></p>
+      <h3>Scientific Name</h3>
+      <p><?php echo e($animal['scientific_name']); ?></p>
+      <h3>Description</h3>
+      <p><?php echo e($animal['description']); ?></p>
+      <h3>Image</h3>
+      <img src="<?php echo e($animal['image_url']); ?>" alt="<?php echo e($animal['name']); ?>">
+    </div>
+    <?php endforeach; ?>
+  </div>
+</div>
 
 <?php require_once 'includes/footer.php'; ?>

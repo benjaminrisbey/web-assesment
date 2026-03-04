@@ -20,3 +20,27 @@ a {
 p {
   line-height: 1.3;
 }
+
+button {
+  background: var(--accent);
+  color: var(--heading);
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border: 1px solid whitesmoke;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
+
+button:active {
+  background: whitesmoke;
+  color: var(--accent);
+  scale: 0.95;
+}
+
+.hidden {
+  display: none;
+}
+
