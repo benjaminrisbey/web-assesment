@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div id="alert" class="alert success">
       <span id="alert-text" class="alert-text">Message Sent</span>
     </div>
-  <?php endif; ?>
+<?php endif; ?>
 
 <?php if (!$success) : ?>
   <form id="contact-form" action="contact.php" method="post">

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Database connection file
  * SET08101 Web Technologies Coursework
@@ -11,7 +12,8 @@ require_once __DIR__ . '/config.php';
  *
  * @return PDO The database connection object
  */
-function getDbConnection() {
+function getDbConnection()
+{
     static $pdo = null;
 
     if ($pdo === null) {

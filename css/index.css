@@ -5,14 +5,13 @@
   margin: 2em auto;
 }
 
-
 .vent-card {
   flex: 1;
   width: 80%;
   background: var(--background-card);
   border: 1px solid var(--background-secondary);
   padding: 2em;
-  margin: 0.5em auto
+  margin: 0.5em auto;
 }
 
 .vent-card hr {
@@ -23,4 +22,34 @@
   margin: 0.5em 0;
 }
 
+.search-and-filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2em auto;
+  width: 80%;
+}
 
+#search-input {
+  padding: 0.5em;
+  width: 100%;
+  border: 1px solid var(--background-secondary);
+}
+
+.filters {
+  display: flex;
+  gap: 1em;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.filter-dropdown {
+  border: 1px solid var(--background-secondary);
+  background: var(--background-card);
+  cursor: pointer;
+  color: var(--text);
+  max-width: 45%;
+  margin: 0 auto;
+  padding: 0.5em;
+}
