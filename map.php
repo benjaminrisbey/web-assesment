@@ -11,11 +11,6 @@ require_once 'includes/db.php';
 
 $pageTitle = 'Vents Map';
 
-// Fetch all vents from the database
-$pdo = getDbConnection();
-$stmt = $pdo->query('SELECT id, name, location, type, depth_metres, discovery_year FROM vents ORDER BY name');
-$vents = $stmt->fetchAll();
-
 require_once 'includes/header.php';
 ?>
 
