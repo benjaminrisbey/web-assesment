@@ -32,6 +32,17 @@ CREATE TABLE fauna (
     FOREIGN KEY (vent_id) REFERENCES vents(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+
+-- ============================================
+-- users table
+-- ============================================
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- ============================================
 -- Sample Vent Data
 -- Data sourced from West Pacific vent biogeography research
@@ -86,3 +97,10 @@ INSERT INTO fauna (vent_id, name, scientific_name, description, image_url) VALUE
 (6, 'Okinawa Hairy Snail', 'Alviniconcha adamantis', 'Hairy gastropod species found in the Okinawa Trough. Harbours chemosynthetic symbionts.', 'images/placeholder.svg'),
 (6, 'Okinawa Crab', 'Shinkaia crosnieri', 'Distinctive galatheid crab with bacterial filaments on its setae. Also known as the yeti crab.', 'images/placeholder.svg'),
 (6, 'Okinawa Vent Limpet', 'Lepetodrilus nux', 'Small limpet found grazing on bacterial mats near vents.', 'images/placeholder.svg');
+
+
+-- ============================================
+-- User Accounts
+-- ============================================
+INSERT INTO users (username, password_hash) VALUES
+('admin', 'test'); -- Example hash for 'password123'

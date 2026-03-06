@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --background-card: oklch(0.129 0.0296 264.695);
   --background: oklch(12.9% 0.042 264.695);
@@ -9,6 +9,6 @@
   --accent-hover: oklch(68.5% 0.169 237.323 / 0.8);
   --color-error: #b42318;
   --color-success: #067647;
-  --heading-font: 'Roboto', Arial, sans-serif;
-  --body-font: 'Raleway', sans-serif;
+  --heading-font: "Roboto", Arial, sans-serif;
+  --body-font: "Raleway", sans-serif;
 }

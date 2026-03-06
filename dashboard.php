@@ -19,7 +19,8 @@ require_once 'includes/header.php';
 
 ?>
 
-<h2>Profile</h2>
+<h2>DashBoard</h2>
+
 <a href="logout.php">Logout</a>
 
 

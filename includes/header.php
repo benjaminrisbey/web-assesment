@@ -36,7 +36,7 @@
         <a href="vents.php">Vents</a>
         <a href="map.php">Map</a>
         <a href="contact.php">Contact</a>
-        <a href="profile.php"><i class="fa-solid fa-user"></i></a>
+      <a href="profile.php"><i class="fa-solid fa-user"></i></a>
         <!-- Students: Add more navigation links here -->
       </nav>
     </div>
