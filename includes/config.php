@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Configuration file for the Hydrothermal Vent Database
  * SET08101 Web Technologies Coursework
@@ -20,6 +21,7 @@ define('DB_CHARSET', 'utf8mb4');
  * @param string $string The string to escape
  * @return string The escaped string safe for HTML output
  */
-function e($string) {
+function e($string)
+{
     return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
 }

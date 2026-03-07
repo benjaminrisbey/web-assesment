@@ -14,6 +14,7 @@ $pageTitle = 'All Vents';
 $sort = $_GET['sort'] ?? '';
 $typeFilter = $_GET['type'] ?? '';
 
+session_start();
 
 // Explode sort
 $sortParts = explode('-', $sort);
@@ -25,11 +26,11 @@ $allowedSorts = [
     'name' => 'name',
     'depth' => 'depth_metres',
     'discovery' => 'discovery_year',
-    'type' => 'type'
+    'type' => 'type',
 ];
 $allowedDirections = [
     'asc' => 'ASC',
-    'desc' => 'DESC'
+    'desc' => 'DESC',
 ];
 
 $sortColumn = $allowedSorts[$sortType] ?? 'name';
@@ -68,12 +69,24 @@ require_once 'includes/header.php';
     <!-- Sort Dropdown -->
     <select name="sort" id="sort-filter" class="filter-dropdown" onchange="this.form.submit()">
         <option value="">Sort By</option>
-        <option value="name-asc" <?php if ($sort === 'name-asc') echo 'selected'; ?>>Name A–Z</option>
-        <option value="name-desc" <?php if ($sort === 'name-desc') echo 'selected'; ?>>Name Z–A</option>
-        <option value="depth-asc" <?php if ($sort === 'depth-asc') echo 'selected'; ?>>Depth (Shallow → Deep)</option>
-        <option value="depth-desc" <?php if ($sort === 'depth-desc') echo 'selected'; ?>>Depth (Deep → Shallow)</option>
-        <option value="discovery-asc" <?php if ($sort === 'discovery-asc') echo 'selected'; ?>>Discovered (Old → New)</option>
-        <option value="discovery-desc" <?php if ($sort === 'discovery-desc') echo 'selected'; ?>>Discovered (New → Old)</option>
+        <option value="name-asc" <?php if ($sort === 'name-asc') {
+            echo 'selected';
+        } ?>>Name A–Z</option>
+        <option value="name-desc" <?php if ($sort === 'name-desc') {
+            echo 'selected';
+        } ?>>Name Z–A</option>
+        <option value="depth-asc" <?php if ($sort === 'depth-asc') {
+            echo 'selected';
+        } ?>>Depth (Shallow → Deep)</option>
+        <option value="depth-desc" <?php if ($sort === 'depth-desc') {
+            echo 'selected';
+        } ?>>Depth (Deep → Shallow)</option>
+        <option value="discovery-asc" <?php if ($sort === 'discovery-asc') {
+            echo 'selected';
+        } ?>>Discovered (Old → New)</option>
+        <option value="discovery-desc" <?php if ($sort === 'discovery-desc') {
+            echo 'selected';
+        } ?>>Discovered (New → Old)</option>
     </select>
 
     <!-- Type Filter -->
@@ -81,13 +94,18 @@ require_once 'includes/header.php';
         <option value="">None</option>
         <?php foreach ($types as $typeItem) : ?>
             <option value="<?php echo htmlspecialchars($typeItem['type']); ?>"
-                <?php if ($typeFilter === $typeItem['type']) echo 'selected'; ?>>
+                <?php if ($typeFilter === $typeItem['type']) {
+                    echo 'selected';
+                } ?>>
                 <?php echo htmlspecialchars($typeItem['type']); ?>
             </option>
         <?php endforeach; ?>
     </select>
   </form>
 </div>
+
+<button class="vent-btn" onclick="window.location.href='add_vent.php'"><i class="fa-solid fa-plus"></i> Add New Vent</button>
+
 
 <?php if (empty($vents)) : ?>
   <p>No vents found in the database.</p>
@@ -102,6 +120,9 @@ require_once 'includes/header.php';
         <p><strong>Depth:</strong> <?php echo e($vent['depth_metres']); ?> m</p>
         <p><strong>Discovered:</strong> <?php echo e($vent['discovery_year']); ?></p>
         <button class="view-details-btn" onclick="window.location.href='vent.php?id=<?php echo e($vent['id']); ?>'">View Details</button>
+        <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
+          <button class="view-details-btn" onclick="window.location.href='edit_vent.php?id=<?php echo e($vent['id']); ?>'">Edit</button>
+        <?php endif; ?>
       </div>
     <?php endforeach; ?>
 </div>
