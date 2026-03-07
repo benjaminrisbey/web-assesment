@@ -42,8 +42,8 @@
     </div>
     <div class="header-icons">
       <span onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
-    </div>
-
+  </div>
+    <?php session_start(); ?>
 
   </header>
   <main>

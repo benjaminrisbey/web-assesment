@@ -109,6 +109,7 @@ require_once 'includes/header.php';
     </form>
   </div>
 
+  <button class="view-details-btn vent-btn" onclick="window.location.href='add_fauna.php?id=<?php echo e($vent['id']); ?>'">Add new Fauna</button>
   <?php if (empty($fauna)) : ?>
     <p>No fauna found for this vent.</p>
   <?php else : ?>
@@ -127,6 +128,9 @@ require_once 'includes/header.php';
       <p><?php echo e($animal['description']); ?></p>
       <h3>Image</h3>
       <img src="<?php echo e($animal['image_url']); ?>" alt="<?php echo e($animal['name']); ?>">
+      <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
+        <button class="view-details-btn" onclick="window.location.href='edit_fauna.php?id=<?php echo e($animal['id']); ?>'">Edit</button>
+      <?php endif; ?>
     </div>
     <?php endforeach; ?>
   </div>

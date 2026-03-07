@@ -104,7 +104,9 @@ require_once 'includes/header.php';
   </form>
 </div>
 
-<button class="vent-btn" onclick="window.location.href='add_vent.php'"><i class="fa-solid fa-plus"></i> Add New Vent</button>
+<?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
+    <button class="vent-btn" onclick="window.location.href='add_vent.php'"><i class="fa-solid fa-plus"></i> Add New Vent</button>
+<?php endif; ?>
 
 
 <?php if (empty($vents)) : ?>
