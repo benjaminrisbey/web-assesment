@@ -108,6 +108,7 @@ require_once 'includes/header.php';
     <button class="vent-btn" onclick="window.location.href='add_vent.php'"><i class="fa-solid fa-plus"></i> Add New Vent</button>
 <?php endif; ?>
 
+          <button class="view-details-btn" onclick="window.location.href='edit_fauna.php?id=3'">Edit</button>
 
 <?php if (empty($vents)) : ?>
   <p>No vents found in the database.</p>

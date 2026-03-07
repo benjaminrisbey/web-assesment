@@ -29,7 +29,7 @@ $vent = $stmt->fetch();
 
 $stmt = $pdo->prepare('SELECT id, name, scientific_name, description, image_url FROM fauna WHERE vent_id = ?');
 $stmt->execute([$ventId]);
-$fauna = $stmt->fetchAll();
+$fauna = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // If vent not found, redirect to home
 if (!$vent) {
